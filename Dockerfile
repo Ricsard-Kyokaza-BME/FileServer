@@ -2,13 +2,13 @@
 FROM node:latest
 
 # Set in what directory commands will run
-WORKDIR /home/file-server/app
-ADD . /home/file-servers/app
+WORKDIR /home/fs/app
+ADD . /home/fs/app
 
 # Install dependencies
-RUN cd /home/file-server/app && \
+RUN cd /home/fs/app && \
     npm install
 
 # The command to run our app when the container is run
-VOLUME ["/home/file-server/app"]
+VOLUME ["/home/fs/app"]
 CMD npm run-script prod
