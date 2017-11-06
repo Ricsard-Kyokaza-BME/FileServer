@@ -1,2 +1,2 @@
 # FileServer
-Tiny FileServer based on NodeJS with multer
+Tiny FileServer based on NodeJS with multer, Dockerized
