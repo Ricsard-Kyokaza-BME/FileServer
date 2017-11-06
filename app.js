@@ -13,6 +13,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+// UGLY Temporary fix
+app.use(function (req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    next();
+});
+
 app.use('/' + (process.argv[3] || ''), index);
 
 // catch 404 and forward to error handler
