@@ -28,7 +28,7 @@ router.post('/', uploader.array('files'), function(req, res, next) {
 
 /* GET File by name */
 router.get('/:filename', function(req, res, next) {
-    res.sendFile(path.join(__dirname, '../upload', req.params.filename));
+    res.sendFile(process.argv[2] + '/' + req.params.filename);
 });
 
 module.exports = router;
